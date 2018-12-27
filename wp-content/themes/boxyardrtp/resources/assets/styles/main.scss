@@ -1,4 +1,11 @@
 // Import parent theme styles
-@import url("/wp-content/themes/unity-core/dist/styles/main.css");
+@import "/../../../../unity-core/resources/assets/styles/main";
 
 // Import child theme overrides into this file
+@import "common/variables";
+@import "common/global";
+@import "common/typography";
+@import "components/navigation";
+@import "components/social";
+@import "layouts/homepage";
+@import "layouts/footer";

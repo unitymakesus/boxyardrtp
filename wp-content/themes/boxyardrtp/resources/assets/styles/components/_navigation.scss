@@ -1,0 +1,66 @@
+// Top Nav
+.topbar-wrapper {
+  background: $color-grey-dark;
+
+  .topbar {
+    height: 60px;
+  }
+
+  .topbar-menu-wrapper {
+    height: 100%;
+  }
+
+  .topbar-menu {
+    li {
+      padding: 3px;
+
+      &::before {
+        content: "| ";
+        color: $color-white;
+      }
+
+      &:first-of-type::before {
+        content: "";
+      }
+
+      a {
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .search-form {
+    margin: 0 10px;
+
+    .search-submit {
+      display: none !important;
+    }
+  }
+}
+
+// Primary Nav
+.nav-primary {
+  box-shadow: none;
+
+  .logo {
+    padding: 0;
+  }
+
+  .navbar-menu {
+    a {
+      font-size: 18px;
+      margin: 0 10px;
+    }
+
+    // CTA Button
+    .cta-btn a {
+      background: $color-red;
+      color: $color-white;
+      padding: 10px 20px;
+      border-radius: 3px;
+    }
+  }
+}
