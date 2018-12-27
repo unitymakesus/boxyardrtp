@@ -1,0 +1,63 @@
+#menu-social-menu {
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0;
+    display: inline-block;
+    float: none;
+
+    a {
+      display: block;
+      position: relative;
+      height: 40px;
+      width: 40px;
+      padding: 0;
+      overflow: hidden;
+      text-align: left;
+      text-indent: -100em;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: all 0.3s;
+      }
+
+      &:hover, &:active, &:focus {
+        @extend .z-depth-2;
+      }
+    }
+
+    &.facebook a::before {
+      background-image: url('../socialicons/Facebook.svg');
+    }
+
+    &.google a::before {
+      background-image: url('../socialicons/Google.svg');
+    }
+
+    &.instagram a::before {
+      background-image: url('../socialicons/Instagram.svg');
+    }
+
+    &.pinterest a::before {
+      background-image: url('../socialicons/Pinterest.svg');
+    }
+
+    &.twitter a::before {
+      background-image: url('../socialicons/Twitter.svg');
+    }
+
+    &.youtube a::before {
+      background-image: url('../socialicons/Youtube.svg');
+    }
+  }
+}

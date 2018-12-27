@@ -1,0 +1,20 @@
+h1 {
+  color: $color-white;
+  font-size: 68px;
+}
+
+h2 {
+  font-size: 47px;
+  color: $color-red;
+}
+
+.knockout {
+  background-color: hsl(0, 0%, 100%);
+  mix-blend-mode: screen;
+  width: auto;
+  display: inline-block;
+
+  h1 {
+    color: black;
+  }
+}

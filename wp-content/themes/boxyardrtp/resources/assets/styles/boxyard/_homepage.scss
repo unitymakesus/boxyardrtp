@@ -1,0 +1,21 @@
+.homepage-btn {
+  position: relative;
+  right: 180px;
+
+  .fl-button {
+    background: $color-red !important;
+    border: 0 !important;
+    padding: 15px 50px !important;
+
+    .fl-button-text {
+      color: $color-white !important;
+    }
+  }
+}
+
+.fl-form-field {
+  input {
+    width: 90% !important;
+    height: 20px !important;
+  }
+}
