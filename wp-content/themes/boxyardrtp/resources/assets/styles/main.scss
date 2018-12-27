@@ -47,3 +47,12 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+
+// Boxyard Styles
+@import "boxyard/variables";
+@import "boxyard/global";
+@import "boxyard/navigation";
+@import "boxyard/typography";
+@import "boxyard/homepage";
+@import "boxyard/social";
+@import "boxyard/footer";

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "39575ff15227e4bd7bd3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0cdd69afa2d6efd43daf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -716,13 +716,13 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://localhost:3000/wp-content/themes/simple-unity/dist/";
+/******/ 	__webpack_require__.p = "http://localhost:3000/wp-content/themes/boxyardrtp/dist/";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(34)(__webpack_require__.s = 34);
+/******/ 	return hotCreateRequire(50)(__webpack_require__.s = 50);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2351,7 +2351,23 @@ module.exports = function(hash, moduleMap, options) {
 /* 31 */,
 /* 32 */,
 /* 33 */,
-/* 34 */
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */
 /*!*********************************************************************************!*\
   !*** multi ./build/util/../helpers/hmr-client.js ./scripts/customizer-panel.js ***!
   \*********************************************************************************/
@@ -2360,11 +2376,11 @@ module.exports = function(hash, moduleMap, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/lexinamer/Desktop/Unity/Github/boxyardrtp/app/public/wp-content/themes/boxyardrtp/resources/assets/build/util/../helpers/hmr-client.js */2);
-module.exports = __webpack_require__(/*! ./scripts/customizer-panel.js */35);
+module.exports = __webpack_require__(/*! ./scripts/customizer-panel.js */51);
 
 
 /***/ }),
-/* 35 */
+/* 51 */
 /*!*************************************!*\
   !*** ./scripts/customizer-panel.js ***!
   \*************************************/
