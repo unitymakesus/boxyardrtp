@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7a66f8bde663b40adee4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "39575ff15227e4bd7bd3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -722,7 +722,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(48)(__webpack_require__.s = 48);
+/******/ 	return hotCreateRequire(32)(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2349,23 +2349,7 @@ module.exports = function(hash, moduleMap, options) {
 /* 29 */,
 /* 30 */,
 /* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */
+/* 32 */
 /*!***************************************************************************!*\
   !*** multi ./build/util/../helpers/hmr-client.js ./scripts/customizer.js ***!
   \***************************************************************************/
@@ -2374,11 +2358,11 @@ module.exports = function(hash, moduleMap, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/lexinamer/Desktop/Unity/Github/boxyardrtp/app/public/wp-content/themes/boxyardrtp/resources/assets/build/util/../helpers/hmr-client.js */2);
-module.exports = __webpack_require__(/*! ./scripts/customizer.js */49);
+module.exports = __webpack_require__(/*! ./scripts/customizer.js */33);
 
 
 /***/ }),
-/* 49 */
+/* 33 */
 /*!*******************************!*\
   !*** ./scripts/customizer.js ***!
   \*******************************/
