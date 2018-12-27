@@ -1,0 +1,38 @@
+.btn {
+  padding: 10px 2rem;
+  height: auto;
+  font-weight: 700;
+
+  [data-font="3"] & {
+    font-weight: 500;
+  }
+}
+
+a.btn {
+  color: $color-white;
+}
+
+.btn-primary {
+  background: $color-white;
+
+  &:hover, &:active, &:focus {
+    background: darken($color-white, 15%);
+  }
+}
+
+.btn-secondary {
+  background: $color-white;
+
+  &:hover, &:active, &:focus {
+    background: darken($color-white, 15%);
+  }
+}
+
+.btn-tertiary {
+  background: $color-white;
+  color: $color-black;
+
+  &:hover, &:active, &:focus {
+    background: darken($color-white, 15%);
+  }
+}
