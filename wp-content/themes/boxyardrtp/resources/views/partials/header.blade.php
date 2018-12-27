@@ -1,17 +1,23 @@
-@php
-  $header_color = get_theme_mod( 'header_color' );
-  $text_color = get_theme_mod( 'header_text_color' );
-  $logo_width = get_theme_mod( 'header_logo_width' );
-  $cta_text = get_theme_mod( 'header_cta_text' );
-  $cta_link = get_theme_mod( 'header_cta_link' );
-  $cta_target_bool = get_theme_mod( 'header_cta_target' );
-  $cta_target = '';
+<section class="topbar-wrapper">
+  <div class="topbar container-wide">
+    @if (has_nav_menu('top_bar'))
+      <div class="menu-trigger-wrapper hide-on-large-only">
+        <input type="checkbox" name="menu-trigger" id="menu-trigger" value="true" />
+        <label for="menu-trigger"><i class="material-icons" aria-label="Show navigation menu">menu</i></label>
+      </div>
 
-  if ($cta_target_bool == true) {
-    $cta_target = 'target="_blank" rel="noopener"';
-  }
-@endphp
-<header class="banner header-inline" role="banner" style="background-color: {{ $header_color }}">
+      <div class="topbar-menu-wrapper flex flex-center space-between">
+        <div class="topbar-menu flex flex-center space-around">
+          {!! wp_nav_menu(['theme_location' => 'top_bar', 'container' => FALSE, 'menu_class' => 'flex flex-center space-around']) !!}
+        </div>
+
+        @php get_search_form() @endphp
+      </div>
+    @endif
+  </div>
+</section>
+
+<header class="banner header container-wide" role="banner">
   <nav class="nav-primary" role="navigation">
     <div class="navbar flex flex-center space-between" data-text-color="{{ $text_color }}">
       @php
