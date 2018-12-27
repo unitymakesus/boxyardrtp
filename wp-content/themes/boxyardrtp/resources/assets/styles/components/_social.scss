@@ -37,7 +37,7 @@
     }
 
     &.pinterest a::before {
-      background-image: url('../images/socialicons/pinterest.svg');
+      background-image: image('socialicons/pinterest.svg');
     }
   }
 }
