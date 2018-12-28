@@ -19,6 +19,13 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /**
+ * Register navigation menus
+ */
+register_nav_menus([
+  'top_bar' => __('Topbar Navigation', 'sage')
+]);
+
+/**
  * Register sidebars
  */
 add_action('widgets_init', function () {
