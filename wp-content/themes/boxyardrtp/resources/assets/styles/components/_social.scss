@@ -36,8 +36,28 @@
       }
     }
 
+    &.facebook a::before {
+      background-image: url('../socialicons/Facebook.svg');
+    }
+
+    &.google a::before {
+      background-image: url('../socialicons/Google.svg');
+    }
+
+    &.instagram a::before {
+      background-image: url('../socialicons/Instagram.svg');
+    }
+
     &.pinterest a::before {
-      background-image: image('socialicons/pinterest.svg');
+      background-image: url('../socialicons/Pinterest.svg');
+    }
+
+    &.twitter a::before {
+      background-image: url('../socialicons/Twitter.svg');
+    }
+
+    &.youtube a::before {
+      background-image: url('../socialicons/Youtube.svg');
     }
   }
 }
