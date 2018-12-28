@@ -1,6 +1,6 @@
 h1 {
-  color: $color-white;
-  font-size: 68px;
+  color: $color-black;
+  font-size: 65px;
 }
 
 h2 {
@@ -8,13 +8,13 @@ h2 {
   color: $color-red;
 }
 
+h4 {
+  font-size: 35px;
+}
+
 .knockout {
   background-color: hsl(0, 0%, 100%);
   mix-blend-mode: screen;
   width: auto;
   display: inline-block;
-
-  h1 {
-    color: black;
-  }
 }

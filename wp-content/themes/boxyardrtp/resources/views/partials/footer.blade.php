@@ -2,22 +2,36 @@
   $footer_color = get_theme_mod( 'footer_color' );
   $text_color = get_theme_mod( 'footer_text_color' );
 @endphp
-<footer class="footer-social page-footer" role="contentinfo" style="background-color: {{ $footer_color }}">
-  <div class="footer-content row flex align-center">
-    <div class="footer-left flex align-center col m6 s12">
+<footer class="page-footer" role="contentinfo">
+
+  <div class="footer-social row flex align-center space-between">
+    <div class="flex align-center col m6 s12">
+      @php dynamic_sidebar('footer-social-left') @endphp
+    </div>
+    <div class="flex flex-end align-center col m6 s12">
+      @php dynamic_sidebar('footer-social-right') @endphp
+    </div>
+  </div>
+
+  <div class="footer-main row flex space-between">
+    <div class="footer-col footer-col-left col m6 s12">
       @php dynamic_sidebar('footer-left') @endphp
     </div>
-    <div class="footer-right flex align-center col m6 s12">
+    <div class="footer-col footer-col-center col m6 s12">
+      @php dynamic_sidebar('footer-center') @endphp
+    </div>
+    <div class="footer-col footer-col-right col m6 s12">
       @php dynamic_sidebar('footer-right') @endphp
     </div>
   </div>
 
-  <div class="footer-copyright row flex space-between">
-    <div class="footer-left col m6 s12">
-      <p class="copyright">&copy; {!! current_time('Y') !!} {{ get_bloginfo('name', 'display') }}</p>
+  <div class="footer-utility row flex align-center space-around">
+    <div class="col m6 s12">
+      @php dynamic_sidebar('footer-utility-left') @endphp
     </div>
-    <div class="footer-right col m6 s12">
-      <a href="{{ get_home_url() }}/privacy-policy/">Privacy Policy</a>
+    <div class="col m6 s12 flex align-center flex-end">
+      @php dynamic_sidebar('footer-utility-right') @endphp
+      <p class="copyright">&copy; {!! current_time('Y') !!} {{ get_bloginfo('name', 'display') }}</p>
     </div>
   </div>
 
