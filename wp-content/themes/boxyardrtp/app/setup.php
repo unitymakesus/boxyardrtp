@@ -123,6 +123,14 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-primary'
     ] + $config);
     register_sidebar([
+        'name'          => __('Footer-Social-Left', 'sage'),
+        'id'            => 'footer-social-left'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer-Social-Right', 'sage'),
+        'id'            => 'footer-social-right'
+    ] + $config);
+    register_sidebar([
         'name'          => __('Footer-Left', 'sage'),
         'id'            => 'footer-left'
     ] + $config);
@@ -133,6 +141,14 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name'          => __('Footer-Right', 'sage'),
         'id'            => 'footer-right'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer-Utility-Left', 'sage'),
+        'id'            => 'footer-utility-left'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer-Utility-Right', 'sage'),
+        'id'            => 'footer-utility-right'
     ] + $config);
 });
 /**
