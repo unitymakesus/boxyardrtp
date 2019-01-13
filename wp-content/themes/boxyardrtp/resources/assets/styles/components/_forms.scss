@@ -1,0 +1,18 @@
+.fl-subscribe-form-inline {
+  input {
+    height: auto !important;
+    padding: 10px 0 !important;
+  }
+
+  .fl-button {
+    @extend .btn-primary;
+
+    background: $color-blue !important;
+    border: 2px solid $color-blue !important;
+
+    .fl-button-text {
+      color: $color-white !important;
+      font-weight: 700 !important;
+    }
+  }
+}

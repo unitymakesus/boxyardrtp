@@ -1,21 +1,29 @@
-.homepage-btn {
-  position: relative;
-  right: 180px;
+.homepage-hero {
+  .fl-row-content-wrap {
+    height: 85vh;
+  }
+}
 
-  .fl-button {
-    background: $color-red !important;
-    border: 0 !important;
-    padding: 15px 50px !important;
+.homepage-cta-row {
+  background: #EDEDED;
 
-    .fl-button-text {
-      color: $color-white !important;
+  .bb_boot_card_container {
+    position: relative;
+    bottom: 175px;
+    background: rgba($color-white, 0.8);
+
+    .bb_boot_card_title {
+      height: 100px;
+    }
+
+    .bb_boot_card_text {
+      height: 150px;
     }
   }
 }
 
-.fl-form-field {
-  input {
-    width: 90% !important;
-    height: 20px !important;
+.about-boxyard {
+  h3 {
+    margin: 0;
   }
 }

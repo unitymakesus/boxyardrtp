@@ -1,0 +1,63 @@
+// Primary Button
+.btn-primary {
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid $color-blue;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: $color-blue;
+
+  &:hover {
+    color: $color-white;
+    background: $color-blue;
+  }
+}
+
+// Secondary Button - CTA
+.btn-secondary {
+  @extend .btn-primary;
+
+  background: $color-red;
+  border-color: $color-red;
+  color: $color-white;
+
+  &:hover {
+    color: $color-red;
+    background: $color-white;
+  }
+}
+
+// Tertiary Buttton - Generic such as submit
+.btn-tertiary {
+  @extend .btn-primary;
+
+  background: $color-blue;
+  border-color: $color-blue;
+  color: $color-white;
+
+  &:hover {
+    color: $color-blue;
+    background: $color-white;
+  }
+}
+
+// CTA Homepage Buttons
+.homepage-cta-row {
+  .bb_boot_card_link {
+    @extend .btn-primary;
+
+    &::after {
+      content: '>>';
+      font-size: 18px;
+    }
+  }
+}
+
+// Homepage Button- Inquire Now
+.inquire {
+  padding: 15px 2.5em;
+  position: relative;
+  right: 170px;
+  top: 50px;
+}

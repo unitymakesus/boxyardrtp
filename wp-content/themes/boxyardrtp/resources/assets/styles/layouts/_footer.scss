@@ -9,6 +9,12 @@
   padding: 0;
   border-bottom: 2px solid $color-grey-light;
   border-top: 2px solid $color-grey-light;
+
+  .fl-subscribe-form-inline {
+    position: relative;
+    top: 3px;
+    width: 400px;
+  }
 }
 
 .footer-main {
@@ -27,6 +33,10 @@
         width: 200px;
       }
     }
+  }
+
+  a {
+    color: $color-white;
   }
 }
 

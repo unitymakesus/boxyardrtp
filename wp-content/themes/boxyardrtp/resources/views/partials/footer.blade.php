@@ -4,11 +4,11 @@
 @endphp
 <footer class="page-footer" role="contentinfo">
 
-  <div class="footer-social row flex align-center space-between">
-    <div class="flex align-center col m6 s12">
+  <div class="footer-social row flex flex-wrap align-center space-between">
+    <div class="flex align-center col l6 m12">
       @php dynamic_sidebar('footer-social-left') @endphp
     </div>
-    <div class="flex flex-end align-center col m6 s12">
+    <div class="flex flex-end align-center col l6 m12">
       @php dynamic_sidebar('footer-social-right') @endphp
     </div>
   </div>
