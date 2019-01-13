@@ -1,13 +1,10 @@
 <section class="topbar-wrapper">
   <div class="topbar container-wide">
     @if (has_nav_menu('top_bar'))
-      <div class="menu-trigger-wrapper hide-on-large-only">
-        <input type="checkbox" name="menu-trigger" id="menu-trigger" value="true" />
-        <label for="menu-trigger"><i class="material-icons" aria-label="Show navigation menu">menu</i></label>
-      </div>
-
       <div class="topbar-menu-wrapper flex flex-center space-between">
         <div class="topbar-menu flex flex-center space-around">
+          <img class="rtp-logo" src="@asset('images/Logo.svg')" alt="RTP Logo" />
+
           {!! wp_nav_menu(['theme_location' => 'top_bar', 'container' => FALSE, 'menu_class' => 'flex flex-center space-around']) !!}
         </div>
 

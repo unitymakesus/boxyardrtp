@@ -1,6 +1,10 @@
 .homepage-hero {
   .fl-row-content-wrap {
     height: 85vh;
+
+    @media #{$medium-and-down} {
+      padding-top: 40vh;
+    }
   }
 }
 
@@ -14,10 +18,18 @@
 
     .bb_boot_card_title {
       height: 100px;
+
+      @media #{$medium-and-down} {
+        height: auto;
+      }
     }
 
     .bb_boot_card_text {
       height: 150px;
+
+      @media #{$small-and-down} {
+        height: auto;
+      }
     }
   }
 }

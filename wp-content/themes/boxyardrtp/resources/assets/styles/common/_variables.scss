@@ -8,6 +8,7 @@ $color-red:                   #E53D2F;
 $color-burntorange:           #AD4525;
 
 // Breakpoints
+$xsmall-and-down: "only screen and (max-width : 418px)";
 $small-and-down: "only screen and (max-width : 768px)";
-$medium-and-down: "only screen and (max-width : 1024px)";
+$medium-and-down: "only screen and (max-width : 992px)";
 $large-and-down: "only screen and (max-width : 1440px)";

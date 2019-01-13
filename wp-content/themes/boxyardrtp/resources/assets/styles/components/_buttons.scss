@@ -60,4 +60,13 @@
   position: relative;
   right: 170px;
   top: 50px;
+
+  @media #{$medium-and-down} {
+    top: -50px;
+    left: 90%;
+  }
+  @media #{$small-and-down} {
+    top: -40px;
+    left: 55%;
+  }
 }

@@ -1,0 +1,9 @@
+.search-form {
+  .search-submit {
+    display: none !important;
+  }
+
+  @media #{$small-and-down} {
+    display: none;
+  }
+}
