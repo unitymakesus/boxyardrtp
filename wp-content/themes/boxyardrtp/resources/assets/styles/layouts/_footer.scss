@@ -10,6 +10,10 @@
   border-bottom: 2px solid $color-grey-light;
   border-top: 2px solid $color-grey-light;
 
+  @media #{$small-and-down} {
+    justify-content: center;
+  }
+
   .fl-subscribe-form-inline {
     position: relative;
     top: 3px;
@@ -21,7 +25,10 @@
   }
 
   .footer-social-right {
+    height: 100px;
+
     @media #{$small-and-down} {
+      height: auto;
       width: 50%;
       justify-content: flex-start;
 
@@ -43,7 +50,7 @@
   background: $color-grey-dark;
   color: $color-white;
   margin: 0;
-  padding: 1em 2em 6em;
+  padding: 2em 2em;
 
   .footer-col {
     &-left {
@@ -83,6 +90,15 @@
   padding: 0.5em 2em;
   margin: 0;
   font-size: 14px;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
 
   .footer-utility-right {
     @media #{$small-and-down} {

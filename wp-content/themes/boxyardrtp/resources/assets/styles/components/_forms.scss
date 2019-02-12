@@ -2,11 +2,13 @@
   input {
     height: auto !important;
     padding: 10px 0 !important;
+    border-radius: 2px !important;
   }
 
   .fl-button {
     @extend .btn-primary;
 
+    border-radius: 2px !important;
     background: $color-blue !important;
     border: 2px solid $color-blue !important;
 

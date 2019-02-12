@@ -4,3 +4,12 @@
     margin: 0;
   }
 }
+
+// Image Backgrounds
+.fullimage-bg {
+  .fl-row-content {
+    @media #{$small-and-down} {
+      padding: 40px 0;
+    }
+  }
+}

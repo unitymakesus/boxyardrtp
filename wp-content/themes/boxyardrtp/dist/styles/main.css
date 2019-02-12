@@ -16319,6 +16319,7 @@ h3 {
 h4 {
   font-size: 22px;
   letter-spacing: 0;
+  line-height: 30px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -16330,20 +16331,20 @@ h4 {
   }
 }
 
-/* line 53, resources/assets/styles/common/_typography.scss */
+/* line 54, resources/assets/styles/common/_typography.scss */
 
 p {
   font-size: 18px;
   line-height: 24px;
 }
 
-/* line 58, resources/assets/styles/common/_typography.scss */
+/* line 59, resources/assets/styles/common/_typography.scss */
 
 a {
   font-weight: normal;
 }
 
-/* line 62, resources/assets/styles/common/_typography.scss */
+/* line 63, resources/assets/styles/common/_typography.scss */
 
 .knockout {
   display: inline-block;
@@ -16353,14 +16354,14 @@ a {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 62, resources/assets/styles/common/_typography.scss */
+  /* line 63, resources/assets/styles/common/_typography.scss */
 
   .knockout {
     height: 75px;
   }
 }
 
-/* line 73, resources/assets/styles/common/_typography.scss */
+/* line 74, resources/assets/styles/common/_typography.scss */
 
 .weight-normal * {
   font-weight: normal;
@@ -16650,111 +16651,142 @@ a {
   font-size: 18px;
 }
 
-/* line 58, resources/assets/styles/components/_buttons.scss */
-
-.inquire {
-  padding: 15px 2.5em;
-  position: relative;
-  right: 170px;
-  top: 50px;
-}
-
-@media only screen and (max-width: 992px) {
-  /* line 58, resources/assets/styles/components/_buttons.scss */
-
-  .inquire {
-    top: -50px;
-    left: 90%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  /* line 58, resources/assets/styles/components/_buttons.scss */
-
-  .inquire {
-    top: -40px;
-    left: 55%;
-  }
-}
-
 /* line 2, resources/assets/styles/components/_forms.scss */
 
 .fl-subscribe-form-inline input {
   height: auto !important;
   padding: 10px 0 !important;
+  border-radius: 2px !important;
 }
 
-/* line 7, resources/assets/styles/components/_forms.scss */
+/* line 8, resources/assets/styles/components/_forms.scss */
 
 .fl-subscribe-form-inline .fl-button {
+  border-radius: 2px !important;
   background: #003B48 !important;
   border: 2px solid #003B48 !important;
 }
 
-/* line 13, resources/assets/styles/components/_forms.scss */
+/* line 15, resources/assets/styles/components/_forms.scss */
 
 .fl-subscribe-form-inline .fl-button .fl-button-text {
   color: #FFF !important;
   font-weight: 700 !important;
 }
 
-/* line 2, resources/assets/styles/layouts/_homepage.scss */
+/* line 3, resources/assets/styles/layouts/_homepage.scss */
 
 .homepage-hero .fl-row-content-wrap {
-  height: 85vh;
+  height: 60vh;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 2, resources/assets/styles/layouts/_homepage.scss */
+  /* line 3, resources/assets/styles/layouts/_homepage.scss */
 
   .homepage-hero .fl-row-content-wrap {
-    padding-top: 40vh;
+    height: 65vh;
+    padding-top: 60vh;
   }
 }
 
-/* line 11, resources/assets/styles/layouts/_homepage.scss */
+/* line 14, resources/assets/styles/layouts/_homepage.scss */
 
 .homepage-cta-row {
   background: #EDEDED;
 }
 
-/* line 14, resources/assets/styles/layouts/_homepage.scss */
+/* line 17, resources/assets/styles/layouts/_homepage.scss */
+
+.homepage-cta-row .bb_boot_card_block {
+  padding-top: 0;
+}
+
+/* line 21, resources/assets/styles/layouts/_homepage.scss */
 
 .homepage-cta-row .bb_boot_card_container {
   position: relative;
-  bottom: 175px;
+  bottom: 125px;
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* line 19, resources/assets/styles/layouts/_homepage.scss */
+@media only screen and (max-width: 768px) {
+  /* line 21, resources/assets/styles/layouts/_homepage.scss */
+
+  .homepage-cta-row .bb_boot_card_container {
+    bottom: 110px;
+  }
+}
+
+/* line 30, resources/assets/styles/layouts/_homepage.scss */
 
 .homepage-cta-row .bb_boot_card_container .bb_boot_card_title {
-  height: 100px;
+  height: 75px;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 19, resources/assets/styles/layouts/_homepage.scss */
+  /* line 30, resources/assets/styles/layouts/_homepage.scss */
 
   .homepage-cta-row .bb_boot_card_container .bb_boot_card_title {
     height: auto;
   }
 }
 
-/* line 27, resources/assets/styles/layouts/_homepage.scss */
+/* line 38, resources/assets/styles/layouts/_homepage.scss */
 
 .homepage-cta-row .bb_boot_card_container .bb_boot_card_text {
-  height: 150px;
+  height: 130px;
+  margin-top: 10px;
+  vertical-align: top;
 }
 
-@media only screen and (max-width: 768px) {
-  /* line 27, resources/assets/styles/layouts/_homepage.scss */
+@media only screen and (max-width: 992px) {
+  /* line 38, resources/assets/styles/layouts/_homepage.scss */
 
   .homepage-cta-row .bb_boot_card_container .bb_boot_card_text {
     height: auto;
   }
 }
 
-/* line 38, resources/assets/styles/layouts/_homepage.scss */
+/* line 51, resources/assets/styles/layouts/_homepage.scss */
+
+.inquire-container {
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 51, resources/assets/styles/layouts/_homepage.scss */
+
+  .inquire-container {
+    margin-bottom: 100px;
+  }
+}
+
+/* line 58, resources/assets/styles/layouts/_homepage.scss */
+
+.inquire-container .inquire {
+  position: absolute;
+  padding: 10px 2.5em;
+  bottom: -25px;
+  right: -116px;
+}
+
+@media only screen and (max-width: 992px) {
+  /* line 58, resources/assets/styles/layouts/_homepage.scss */
+
+  .inquire-container .inquire {
+    right: -55px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 58, resources/assets/styles/layouts/_homepage.scss */
+
+  .inquire-container .inquire {
+    right: -22px;
+  }
+}
+
+/* line 74, resources/assets/styles/layouts/_homepage.scss */
 
 .about-boxyard h3 {
   margin: 0;
@@ -16764,6 +16796,14 @@ a {
 
 .hero h1 {
   margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 10, resources/assets/styles/layouts/_pages.scss */
+
+  .fullimage-bg .fl-row-content {
+    padding: 40px 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -16791,7 +16831,17 @@ a {
   border-top: 2px solid #A4A9AC;
 }
 
-/* line 13, resources/assets/styles/layouts/_footer.scss */
+@media only screen and (max-width: 768px) {
+  /* line 7, resources/assets/styles/layouts/_footer.scss */
+
+  .footer-social {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/* line 17, resources/assets/styles/layouts/_footer.scss */
 
 .footer-social .fl-subscribe-form-inline {
   position: relative;
@@ -16800,30 +16850,37 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 13, resources/assets/styles/layouts/_footer.scss */
+  /* line 17, resources/assets/styles/layouts/_footer.scss */
 
   .footer-social .fl-subscribe-form-inline {
     width: 300px;
   }
 }
 
+/* line 27, resources/assets/styles/layouts/_footer.scss */
+
+.footer-social .footer-social-right {
+  height: 100px;
+}
+
 @media only screen and (max-width: 768px) {
-  /* line 23, resources/assets/styles/layouts/_footer.scss */
+  /* line 27, resources/assets/styles/layouts/_footer.scss */
 
   .footer-social .footer-social-right {
+    height: auto;
     width: 50%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
 
-  /* line 28, resources/assets/styles/layouts/_footer.scss */
+  /* line 35, resources/assets/styles/layouts/_footer.scss */
 
   .footer-social .footer-social-right .fl-builder-module-template {
     padding: 0;
   }
 
-  /* line 31, resources/assets/styles/layouts/_footer.scss */
+  /* line 38, resources/assets/styles/layouts/_footer.scss */
 
   .footer-social .footer-social-right .fl-builder-module-template .fl-module-content {
     margin-top: 0;
@@ -16831,42 +16888,42 @@ a {
 }
 
 @media only screen and (max-width: 418px) {
-  /* line 23, resources/assets/styles/layouts/_footer.scss */
+  /* line 27, resources/assets/styles/layouts/_footer.scss */
 
   .footer-social .footer-social-right {
     width: 100%;
   }
 }
 
-/* line 42, resources/assets/styles/layouts/_footer.scss */
+/* line 49, resources/assets/styles/layouts/_footer.scss */
 
 .footer-main {
   background: #2D2D2D;
   color: #FFF;
   margin: 0;
-  padding: 1em 2em 6em;
+  padding: 2em 2em;
 }
 
-/* line 49, resources/assets/styles/layouts/_footer.scss */
+/* line 56, resources/assets/styles/layouts/_footer.scss */
 
 .footer-main .footer-col-left {
   text-align: center;
   padding-top: 1.5em;
 }
 
-/* line 53, resources/assets/styles/layouts/_footer.scss */
+/* line 60, resources/assets/styles/layouts/_footer.scss */
 
 .footer-main .footer-col-left img {
   width: 200px;
 }
 
-/* line 59, resources/assets/styles/layouts/_footer.scss */
+/* line 66, resources/assets/styles/layouts/_footer.scss */
 
 .footer-main a {
   color: #FFF;
 }
 
-/* line 64, resources/assets/styles/layouts/_footer.scss */
+/* line 71, resources/assets/styles/layouts/_footer.scss */
 
 .footer-main .widget_text img {
   height: 30px;
@@ -16874,7 +16931,7 @@ a {
   margin-bottom: 5px;
 }
 
-/* line 70, resources/assets/styles/layouts/_footer.scss */
+/* line 77, resources/assets/styles/layouts/_footer.scss */
 
 .footer-main .widget_text.text-3 img {
   height: 20px;
@@ -16884,7 +16941,7 @@ a {
   padding-right: 10px;
 }
 
-/* line 80, resources/assets/styles/layouts/_footer.scss */
+/* line 87, resources/assets/styles/layouts/_footer.scss */
 
 .footer-utility {
   background: #000;
@@ -16894,8 +16951,21 @@ a {
   font-size: 14px;
 }
 
+/* line 94, resources/assets/styles/layouts/_footer.scss */
+
+.footer-utility img {
+  height: 40px;
+  width: auto;
+}
+
+/* line 99, resources/assets/styles/layouts/_footer.scss */
+
+.footer-utility .copyright {
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 768px) {
-  /* line 87, resources/assets/styles/layouts/_footer.scss */
+  /* line 103, resources/assets/styles/layouts/_footer.scss */
 
   .footer-utility .footer-utility-right {
     -webkit-box-pack: start;
@@ -16904,13 +16974,13 @@ a {
   }
 }
 
-/* line 93, resources/assets/styles/layouts/_footer.scss */
+/* line 109, resources/assets/styles/layouts/_footer.scss */
 
 .footer-utility li {
   display: inline-block;
 }
 
-/* line 96, resources/assets/styles/layouts/_footer.scss */
+/* line 112, resources/assets/styles/layouts/_footer.scss */
 
 .footer-utility li::before {
   content: "| ";
@@ -16918,19 +16988,19 @@ a {
   padding: 0 3px;
 }
 
-/* line 102, resources/assets/styles/layouts/_footer.scss */
+/* line 118, resources/assets/styles/layouts/_footer.scss */
 
 .footer-utility li:first-of-type::before {
   content: "";
 }
 
-/* line 106, resources/assets/styles/layouts/_footer.scss */
+/* line 122, resources/assets/styles/layouts/_footer.scss */
 
 .footer-utility li:last-of-type {
   padding-right: 1.5em;
 }
 
-/* line 110, resources/assets/styles/layouts/_footer.scss */
+/* line 126, resources/assets/styles/layouts/_footer.scss */
 
 .footer-utility li a {
   color: #FFF;
