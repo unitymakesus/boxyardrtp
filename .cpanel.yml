@@ -1,5 +1,5 @@
 ---
 deployment:
  tasks:
-  - export DEPLOYPATH=/home/boxyardrtp/public_html/
+  - export DEPLOYPATH=/home/boxyard/public_html/
   - /bin/cp -R * $DEPLOYPATH
