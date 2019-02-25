@@ -1,5 +1,7 @@
 export default {
   init() {
+    console.log('testtttt');
+
     // Show topbar nav
     function showTopbarNav() {
       $('body').addClass('topbarnav-active');
@@ -42,6 +44,7 @@ export default {
       }).on('focusout', function() {
         $(this).parents('li').removeClass('hover');
 
+        var smDown = window.matchMedia( '(max-width: 768px)' );
         if (smDown.matches) {
           setTimeout(function () {
             if ($(':focus').closest('#menu-top-nav').length == 0) {
