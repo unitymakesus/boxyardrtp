@@ -1,7 +1,7 @@
 // Homepage Hero
 .homepage-hero {
   .fl-row-content-wrap {
-    height: 60vh;
+    height: 450px;
 
     @media #{$medium-and-down} {
       height: 65vh;
@@ -19,30 +19,23 @@
   }
 
   .bb_boot_card_container {
+    min-height: 375px;
     position: relative;
     bottom: 125px;
     background: rgba($color-white, 0.8);
 
     @media #{$small-and-down} {
-      bottom: 110px;
+      bottom: 0;
     }
 
     .bb_boot_card_title {
-      height: 75px;
-
-      @media #{$medium-and-down} {
-        height: auto;
-      }
+      height: auto;
     }
 
     .bb_boot_card_text {
-      height: 130px;
+      height: auto;
       margin-top: 10px;
       vertical-align: top;
-
-      @media #{$medium-and-down} {
-        height: auto;
-      }
     }
   }
 }

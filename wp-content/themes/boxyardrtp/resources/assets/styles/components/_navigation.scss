@@ -12,6 +12,16 @@
 
   .topbar {
     height: 40px;
+
+    .menu-trigger-wrapper label {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      padding: 0;
+      float: right;
+    }
   }
 
   .topbar-menu-wrapper {
@@ -49,9 +59,9 @@
   line-height: 0;
   box-shadow: none;
 
-  .logo {
-    padding: 0;
-  }
+  // .logo {
+  //   padding: 0;
+  // }
 
   .navbar-menu {
     ul {
@@ -84,5 +94,119 @@
     a {
       color: $color-grey-dark !important;
     }
+  }
+}
+
+.topbar-menu {
+  // width: 100%;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+  padding: 0 15px;
+
+  & > ul {
+    flex: 1 1 auto;
+  }
+
+  li {
+    &.menu-item-has-children {
+      a {
+        cursor: default;
+
+        @media #{$medium-and-down} {
+          cursor: pointer;
+        }
+      }
+
+      .sub-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        // background: $color-blue-light;
+
+        li {
+          float: none;
+        }
+
+        a {
+          cursor: pointer;
+        }
+
+        @media #{$large-and-up} {
+          max-height: 300em;
+          flex-direction: column;
+          position: absolute;
+          z-index: 10;
+          background: $color-white;
+          transition: max-height 0.3s ease;
+          height: 0;
+          overflow: hidden;
+        }
+      }
+
+      &:hover, &:focus, &.hover {
+        .sub-menu {
+          height: auto;
+        }
+      }
+    }
+
+    &.current-page-ancestor, &.current-menu-item, &.active {
+      // background: $color-teal;
+    }
+
+    &:hover, &:focus, &.hover {
+      // background: $color-teal;
+
+      & > a {
+        // color: $color-white;
+        text-decoration: underline;
+      }
+    }
+
+    a {
+      background: none;
+    }
+  }
+
+  @media #{$medium-only} {
+    height: em-calc(84px);
+
+    li {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      a {
+        font-size: 0.9em;
+      }
+    }
+  }
+  @media #{$medium-and-down} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0;
+    width: 100%;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+
+    li {
+      width: 100%;
+
+      &.hover {
+        .sub-menu {
+          max-height: 100em;
+        }
+      }
+    }
+
+    .topbarnav-active & {
+      max-height: 100em;
+    }
+  }
+
+  .cta-link {
+    padding: 0 15px;
   }
 }
