@@ -1,9 +1,17 @@
 .search-form {
+  input.search-field {
+    background: #616060 !important;
+  }
+
+  label {
+    width: 100%;
+  }
+
   .search-submit {
     display: none !important;
   }
 
   @media #{$small-and-down} {
-    display: none;
+    width: 100%;
   }
 }

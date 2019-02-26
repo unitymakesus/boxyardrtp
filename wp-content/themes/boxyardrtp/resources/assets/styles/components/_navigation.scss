@@ -1,59 +1,3 @@
-// Top Nav
-.topbar-wrapper {
-  background: $color-grey-dark;
-
-  .rtp-logo {
-    height: 25px;
-
-    @media #{$small-and-down} {
-      height: 20px;
-    }
-  }
-
-  // .topbar {
-  //   height: 40px;
-  //
-  //   .menu-trigger-wrapper label {
-  //     display: block;
-  //     text-decoration: none;
-  //     text-align: center;
-  //     color: white;
-  //     cursor: pointer;
-  //     padding: 0;
-  //     float: right;
-  //   }
-  // }
-  //
-  // .topbar-menu-wrapper {
-  //   height: 100%;
-  // }
-  //
-  // .topbar-menu {
-  //   height: 100%;
-  //
-  //   ul {
-  //     height: 100%;
-  //   }
-  //
-  //   li {
-  //     height: 100%;
-  //     padding: 5px 10px;
-  //
-  //     a {
-  //       color: $color-white;
-  //       text-decoration: none;
-  //       text-transform: uppercase;
-  //       font-size: 13px;
-  //       font-weight: normal;
-  //
-  //       @media #{$small-and-down} {
-  //         font-size: 12px;
-  //       }
-  //     }
-  //   }
-  // }
-}
-
 // Primary Nav
 .nav-primary {
   line-height: 0;
@@ -83,28 +27,68 @@
 }
 
 // Active the current site item
-.topbar {
-  .boxyard {
-    background: $color-white;
+.boxyard {
+  background: $color-white;
 
-    a {
-      color: $color-grey-dark !important;
+  a {
+    color: $color-grey-dark !important;
+  }
+}
+
+// Topbar Container
+.topbar {
+  padding: 0 10px;
+  height: 40px;
+  background: $color-grey-dark;
+
+  @media #{$medium-and-down} {
+    padding: 5px;
+    height: auto;
+  }
+
+  .rtp-logo {
+    height: 25px;
+
+    @media #{$small-and-down} {
+      height: 20px;
+    }
+  }
+
+  .topbar-menu-wrapper {
+    height: 100%;
+
+    .topnav-wrapper {
+      @media #{$small-and-down} {
+        padding: 10px 0;
+        flex-direction: row-reverse;
+        width: 60%;
+      }
+
+      .topbar-icon {
+        color: white;
+      }
     }
   }
 }
 
+// Topbar navigation
 .topbar-menu {
+  height: 100%;
   width: 100%;
   border: none;
   margin: 0;
   box-shadow: none;
-  padding: 0 15px;
+  padding: 0;
 
   & > ul {
+    height: 100%;
     flex: 1 1 auto;
   }
 
   li {
+    height: 100%;
+    padding: 5px 10px;
+
     &.menu-item-has-children {
       a {
         cursor: default;
@@ -118,7 +102,6 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        // background: $color-blue-light;
 
         li {
           float: none;
@@ -161,7 +144,11 @@
     }
 
     a {
-      background: none;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: normal;
     }
   }
 
@@ -200,9 +187,5 @@
     .topbarnav-active & {
       max-height: 100em;
     }
-  }
-
-  .cta-link {
-    padding: 0 15px;
   }
 }

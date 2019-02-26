@@ -4,7 +4,7 @@
     height: 450px;
 
     @media #{$medium-and-down} {
-      height: 65vh;
+      height: 400px;
       padding-top: 60vh;
     }
   }
@@ -58,7 +58,7 @@
       right: -55px;
     }
     @media #{$small-and-down} {
-      right: -22px;
+      right: -10px;
     }
   }
 }
