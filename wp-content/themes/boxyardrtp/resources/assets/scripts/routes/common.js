@@ -1,7 +1,5 @@
 export default {
   init() {
-    console.log('testtttt');
-
     // Show topbar nav
     function showTopbarNav() {
       $('body').addClass('topbarnav-active');
