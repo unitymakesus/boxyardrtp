@@ -617,3 +617,46 @@ function fl_fix_seopress() {
 		remove_action( 'save_post', 'seopress_bulk_quick_edit_save_post' );
 	}
 }
+
+/**
+ * SiteGround Optimizer is known to break the builder.
+ * @since 2.1.7
+ */
+if ( isset( $_GET['fl_builder'] ) ) {
+	$options = array(
+		'optimize_html',
+		'optimize_javascript',
+		'optimize_javascript_async',
+		'remove_query_strings',
+		'fix_insecure_content',
+		'optimize_css',
+		'combine_css',
+		'optimize_javascript',
+	);
+	foreach ( $options as $option ) {
+		add_filter( "option_siteground_optimizer_$option", '__return_false' );
+	}
+}
+
+/**
+ * Enlighter stops builder from loading.
+ * @since 2.2
+ */
+add_filter( 'enlighter_startup', 'fl_enlighter_frontend_editing' );
+function fl_enlighter_frontend_editing( $enabled ) {
+	if ( isset( $_GET['fl_builder'] ) ) {
+		return false;
+	}
+	return $enabled;
+}
+
+/**
+ * Set sane settings for SSL
+ * @since 2.2.1
+ */
+function fl_set_curl_safe_opts( $handle ) {
+	curl_setopt( $handle, CURLOPT_SSL_VERIFYPEER, 1 );
+	curl_setopt( $handle, CURLOPT_SSL_VERIFYHOST, 2 );
+	curl_setopt( $handle, CURLOPT_CAINFO, ABSPATH . WPINC . '/certificates/ca-bundle.crt' );
+	return $handle;
+}

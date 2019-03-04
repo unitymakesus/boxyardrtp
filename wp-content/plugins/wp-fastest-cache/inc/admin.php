@@ -119,6 +119,8 @@
 
 					if(current_user_can('manage_options')){
 						if($_POST["wpFastestCachePage"] == "options"){
+							$this->exclude_urls();
+
 							$this->saveOption();
 						}else if($_POST["wpFastestCachePage"] == "deleteCache"){
 							$this->deleteCache();
@@ -129,6 +131,46 @@
 						}
 					}else{
 						die("Forbidden");
+					}
+				}
+			}
+		}
+
+		public function exclude_urls(){
+			// to exclude wishlist url of YITH WooCommerce Wishlist
+			if($this->isPluginActive('yith-woocommerce-wishlist/init.php')){
+				$wishlist_page_id = get_option("yith_wcwl_wishlist_page_id");
+				$permalink = urldecode(get_permalink($wishlist_page_id));
+
+				if(preg_match("/https?:\/\/[^\/]+\/(.+)/", $permalink, $out)){
+					$url = trim($out[1], "/");
+				}
+			}
+
+
+			if(isset($url) && $url){
+				$rules_std = array();
+				$rules_json = get_option("WpFastestCacheExclude");
+
+				$new_rule = new stdClass;
+				$new_rule->prefix = "exact";
+				$new_rule->content = $url;
+				$new_rule->type = "page";
+
+
+				if($rules_json === false){
+					array_push($rules_std, $new_rule);
+					add_option("WpFastestCacheExclude", json_encode($rules_std), null, "yes");
+				}else{
+					$rules_std = json_decode($rules_json);
+
+					if(!is_array($rules_std)){
+						$rules_std = array();
+					}
+
+					if(!in_array($new_rule, $rules_std)){
+						array_push($rules_std, $new_rule);
+						update_option("WpFastestCacheExclude", json_encode($rules_std));
 					}
 				}
 			}
@@ -252,15 +294,15 @@
 		public function checkCachePathWriteable(){
 			$message = array();
 
-			if(!is_dir($this->getWpContentDir()."/cache/")){
-				if (@mkdir($this->getWpContentDir()."/cache/", 0755, true)){
+			if(!is_dir($this->getWpContentDir("/cache/"))){
+				if (@mkdir($this->getWpContentDir("/cache/"), 0755, true)){
 					//
 				}else{
 					array_push($message, "- /wp-content/cache/ is needed to be created");
 				}
 			}else{
-				if (@mkdir($this->getWpContentDir()."/cache/testWpFc/", 0755, true)){
-					rmdir($this->getWpContentDir()."/cache/testWpFc/");
+				if (@mkdir($this->getWpContentDir("/cache/testWpFc/"), 0755, true)){
+					rmdir($this->getWpContentDir("/cache/testWpFc/"));
 				}else{
 					array_push($message, "- /wp-content/cache/ permission has to be 755");
 				}
@@ -273,8 +315,8 @@
 					array_push($message, "- /wp-content/cache/all/ is needed to be created");
 				}
 			}else{
-				if (@mkdir($this->getWpContentDir()."/cache/all/testWpFc/", 0755, true)){
-					rmdir($this->getWpContentDir()."/cache/all/testWpFc/");
+				if (@mkdir($this->getWpContentDir("/cache/all/testWpFc/"), 0755, true)){
+					rmdir($this->getWpContentDir("/cache/all/testWpFc/"));
 				}else{
 					array_push($message, "- /wp-content/cache/all/ permission has to be 755");
 				}	
@@ -338,6 +380,8 @@
 				return array("You have to set <strong><u><a href='".admin_url()."options-permalink.php"."'>permalinks</a></u></strong>", "error");
 			}else if($res = $this->checkSuperCache($path, $htaccess)){
 				return $res;
+			}else if($this->isPluginActive('fast-velocity-minify/fvm.php')){
+				return array("Fast Velocity Minify", "error");
 			}else if($this->isPluginActive('far-future-expiration/far-future-expiration.php')){
 				return array("Far Future Expiration Plugin", "error");
 			}else if($this->isPluginActive('sg-cachepress/sg-cachepress.php')){
@@ -410,6 +454,26 @@
 					$webp = false;
 				}else{
 					$webp = true;
+
+					$cdn_values = get_option("WpFastestCacheCDN");
+
+					if($cdn_values){
+						$std_obj = json_decode($cdn_values);
+
+						foreach($std_obj as $key => $value){
+							if($value->id == "cloudflare"){
+								include_once('cdn.php');
+								
+								CdnWPFC::cloudflare_clear_cache();
+								$res = CdnWPFC::cloudflare_get_zone_id($value->cdnurl, $value->originurl);
+
+								if($res["success"] && ($res["plan"] == "free")){
+									$webp = false;
+								}
+								break;
+							}
+						}
+					}
 				}
 			}else{
 				$webp = false;
@@ -647,7 +711,7 @@
 					"RewriteCond %{QUERY_STRING} !.+"."\n".$loggedInUser.
 					$consent_cookie.
 					"RewriteCond %{HTTP:Cookie} !comment_author_"."\n".
-					"RewriteCond %{HTTP:Cookie} !woocommerce_items_in_cart"."\n".
+					//"RewriteCond %{HTTP:Cookie} !woocommerce_items_in_cart"."\n".
 					"RewriteCond %{HTTP:Cookie} !safirmobilswitcher=mobil"."\n".
 					'RewriteCond %{HTTP:Profile} !^[a-z0-9\"]+ [NC]'."\n".$mobile;
 			
@@ -998,6 +1062,7 @@
 							<?php 
 								$tester_arr_mobile = array(
 									"tr-TR",
+									"tr",
 									"berkatan.com",
 									"yenihobiler.com",
 									"hobiblogu.com",
@@ -1741,6 +1806,7 @@
 										<option value="contain">Contain</option>
 										<option value="exact">Exact</option>
 										<option value="googleanalytics">has Google Analytics Parameters</option>
+										<option value="woocommerce_items_in_cart">has Woocommerce Items in Cart</option>
 								</select>
 							</div>
 							<div class="wpfc-exclude-rule-line-middle">

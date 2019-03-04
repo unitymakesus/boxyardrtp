@@ -1,10 +1,10 @@
 === WP Fastest Cache ===
 Contributors: emrevona
 Donate link: http://profiles.wordpress.org/emrevona/
-Tags: cache, performance, wp-cache, total cache, super cache, cdn
+Tags: cache, caching, performance, wp-cache, total cache, super cache, cdn
 Requires at least: 3.3
-Tested up to: 5.0
-Stable tag: 0.8.8.9
+Tested up to: 5.1
+Stable tag: 0.8.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,19 @@ Wpfc does not support Wordpress Multisite yet.
 18. Database Cleanup
 
 == Changelog ==
+
+= 0.8.9.1 =
+* to disable webp image extension if cloudflare subscription is free
+* to fix cache deletion security issue of WP-PostRatings (CVE-2019-6726 by Sebastian Neef)
+* to add do_action("wpfc_is_cacheable_action") the plugins to be able to detect that a page has been cached or not
+* <strong>[FEATURE]</strong> exclude woocommerce_items_in_cart cookie [<a target="_blank" href="https://www.wpfastestcache.com/tutorial/woocommerce-settings/#cart-widget">Details</a>]
+
+= 0.8.9.0 =
+* to replace lazy load blank.gif with cdn-url
+* to exclude wishlist url of YITH WooCommerce Wishlist
+* refactoring of is_amp()
+* to add webm extension for cdn
+* refactoring of current_url()
 
 = 0.8.8.9 =
 * to fix url with replacing cdn-url on data-product_variations attribute

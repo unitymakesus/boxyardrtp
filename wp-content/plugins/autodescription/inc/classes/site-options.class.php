@@ -8,7 +8,7 @@ defined( 'THE_SEO_FRAMEWORK_PRESENT' ) or die;
 
 /**
  * The SEO Framework plugin
- * Copyright (C) 2015 - 2018 Sybre Waaijer, CyberWire (https://cyberwire.nl/)
+ * Copyright (C) 2015 - 2019 Sybre Waaijer, CyberWire (https://cyberwire.nl/)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as published
@@ -77,6 +77,7 @@ class Site_Options extends Sanitize {
 		 * @since 2.2.7
 		 * @param array $options The default site options.
 		 */
+		// phpcs:disable WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned -- precision alignment OK.
 		return (array) \apply_filters(
 			'the_seo_framework_default_site_options',
 			[
@@ -247,7 +248,6 @@ class Site_Options extends Sanitize {
 
 				'ping_google'          => 1, // Ping Google
 				'ping_bing'            => 1, // Ping Bing
-				'ping_yandex'          => 1, // Ping Yandex
 
 				'sitemap_styles'       => 1,        // Whether to style the sitemap
 				'sitemap_logo'         => 1,        // Whether to add logo to sitemap
@@ -263,6 +263,7 @@ class Site_Options extends Sanitize {
 				'ld_json_breadcrumbs' => 1, // LD+Json Breadcrumbs
 			]
 		);
+		// phpcs:enable WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned
 	}
 
 	/**
