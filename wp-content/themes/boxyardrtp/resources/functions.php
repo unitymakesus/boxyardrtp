@@ -79,7 +79,7 @@ add_filter( 'wpcf7_before_send_mail', function( $contact_form ) {
 
     $body = array(
       'oid' => $org_id,
-      'recordType' => '0121R0000012VRHQA2',
+      'recordType' => '0121R0000012VRH',
       'retURL' => '/',
       'first_name' => $form_data['first-name'],
       'last_name' => $form_data['last-name'],
