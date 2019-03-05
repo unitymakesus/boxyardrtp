@@ -1,3 +1,9 @@
+// General Form Textarea
+textarea {
+	height: 10em !important;
+}
+
+// Email Subscribe Form
 .fl-subscribe-form-inline {
   input {
     height: auto !important;
@@ -24,6 +30,30 @@
   }
 }
 
+// Search Field Input
 .search-form::after {
   display: none;
+}
+
+// Subscribe Footer Form
+.footer-social .fl-subscribe-form-inline .fl-form-button {
+    float: left;
+    width: 33.33%;
+}
+
+.footer-social .fl-subscribe-form-inline.fl-subscribe-form-name-hide .fl-form-field {
+  width: 66.66%;
+	float: left;
+	padding-right: 10px;
+	margin: 0;
+}
+
+.fl-node-5c2526dd88731 .fl-subscribe-form .fl-form-field input {
+	background: white;
+}
+
+@media(max-width: 767px){
+	.fl-subscribe-form a.fl-button {
+		padding: 10px 0 !important;
+	}
 }
