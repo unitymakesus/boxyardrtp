@@ -40,28 +40,28 @@
   }
 }
 
-// Homepage Button- Inquire Now
-.inquire-container {
-  position: relative;
-
-  @media #{$small-and-down} {
-    margin-bottom: 100px;
-  }
-
-  .inquire {
-    position: absolute;
-    padding: 10px 2.5em;
-    bottom: -25px;
-    right: -116px;
-
-    @media #{$medium-and-down} {
-      right: -55px;
-    }
-    @media #{$small-and-down} {
-      right: -10px;
-    }
-  }
-}
+//// Homepage Button- Inquire Now
+// .inquire-container {
+//   position: relative;
+//
+//   @media #{$small-and-down} {
+//     margin-bottom: 100px;
+//   }
+//
+//   .inquire {
+//     position: absolute;
+//     padding: 10px 2.5em;
+//     bottom: -25px;
+//     right: -116px;
+//
+//     @media #{$medium-and-down} {
+//       right: -55px;
+//     }
+//     @media #{$small-and-down} {
+//       right: -10px;
+//     }
+//   }
+// }
 
 .about-boxyard {
   h3 {
