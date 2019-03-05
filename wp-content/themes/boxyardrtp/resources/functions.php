@@ -56,14 +56,12 @@ add_action('widgets_init', function () {
 /**
  * Salesforce integration for CF7
  */
-add_filter( 'wpcf7_before_send_mail', 'unity_wpcf7_salesforce' );
-
-function unity_wpcf7_salesforce( $contact_form ) {
+add_filter( 'wpcf7_before_send_mail', function( $contact_form ) {
   global $wpdb;
-  error_log(print_r($contact_form, true));
+  //error_log(print_r($contact_form, true));
 
   if ( ! isset( $contact_form->posted_data ) && class_exists( 'WPCF7_Submission' ) ) {
-    $submission = WPCF7_Submission::get_instance();
+    $submission = \WPCF7_Submission::get_instance();
 
     if ( $submission ) {
       $form_data = $submission->get_posted_data();
@@ -96,11 +94,11 @@ function unity_wpcf7_salesforce( $contact_form ) {
       'body' => $body
     );
 
-    error_log(print_r($params, true));
+    //error_log(print_r($params, true));
 
     $response = wp_remote_post( $url,  $params );
 
-    error_log(print_r($response, true));
+    //error_log(print_r($response, true));
 
     if ( is_wp_error( $response ) ) {
       $error_message = $response->get_error_message();
@@ -113,4 +111,4 @@ function unity_wpcf7_salesforce( $contact_form ) {
       wp_mail( $to, $subject, $body, $headers );
     }
   }
-}
+});
