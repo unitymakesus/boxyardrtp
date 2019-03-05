@@ -60,6 +60,7 @@ add_filter( 'wpcf7_before_send_mail', 'unity_wpcf7_salesforce' );
 
 function unity_wpcf7_salesforce( $contact_form ) {
   global $wpdb;
+  error_log(print_r($contact_form, true));
 
   if ( ! isset( $contact_form->posted_data ) && class_exists( 'WPCF7_Submission' ) ) {
     $submission = WPCF7_Submission::get_instance();

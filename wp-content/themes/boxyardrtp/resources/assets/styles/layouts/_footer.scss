@@ -31,10 +31,9 @@
       margin: 0;
     }
 
-    @media(max-width: 590px){
-    	flex-direction: column;
+    @media (max-width: 590px) {
+      flex-direction: column;
     }
-
     @media #{$small-and-down} {
       width: 300px;
     }
