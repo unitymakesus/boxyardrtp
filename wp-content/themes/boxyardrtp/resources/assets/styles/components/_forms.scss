@@ -3,6 +3,19 @@ textarea {
   height: 10em !important;
 }
 
+// General Form Label Columns
+.form-col {
+	display: flex;
+
+  p {
+    width: 50%;
+
+    &:nth-of-type(1) {
+      margin-right: 10px;
+    }
+  }
+}
+
 // Email Subscribe Form
 .fl-subscribe-form-inline {
   input {

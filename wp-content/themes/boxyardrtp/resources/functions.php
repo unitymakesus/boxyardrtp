@@ -84,6 +84,8 @@ add_filter( 'wpcf7_before_send_mail', function( $contact_form ) {
       'first_name' => $form_data['first-name'],
       'last_name' => $form_data['last-name'],
       'email' => $form_data['email'],
+      'company' => $form_data['company'],
+      'title' => $form_data['title'],
       '00N1R00000TXgdb' => $form_data['your-message'],
     );
 
