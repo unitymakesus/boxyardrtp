@@ -56,61 +56,61 @@ add_action('widgets_init', function () {
 /**
  * Salesforce integration for CF7
  */
-add_filter( 'wpcf7_before_send_mail', function( $contact_form ) {
-  global $wpdb;
-  //error_log(print_r($contact_form, true));
-
-  if ( ! isset( $contact_form->posted_data ) && class_exists( 'WPCF7_Submission' ) ) {
-    $submission = \WPCF7_Submission::get_instance();
-
-    if ( $submission ) {
-      $form_data = $submission->get_posted_data();
-    }
-  } else {
-    return $contact_form;
-  }
-
-  // Set up variables
-  $url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
-  $org_id = '00D36000001EFrk';
-
-  // General form
-  if ($contact_form->id == "5") {
-
-    $body = array(
-      'oid' => $org_id,
-      'recordType' => '0121R0000012VRH',
-      'retURL' => '/',
-      'first_name' => $form_data['first-name'],
-      'last_name' => $form_data['last-name'],
-      'email' => $form_data['email'],
-      'company' => $form_data['company'],
-      'title' => $form_data['title'],
-      '00N1R00000TXgdb' => $form_data['your-message'],
-    );
-
-    $params = array(
-      'headers' => array(
-        'Content-Type' => 'application/x-www-form-urlencoded'
-      ),
-      'body' => $body
-    );
-
-    //error_log(print_r($params, true));
-
-    $response = wp_remote_post( $url,  $params );
-
-    //error_log(print_r($response, true));
-
-    if ( is_wp_error( $response ) ) {
-      $error_message = $response->get_error_message();
-
-      $to = 'admin@unitymakes.us';
-      $subject = 'Boxyard CF7 #5 -> Salesforce POST Failed';
-      $body = 'Error message: '.$error_message;
-      $headers = array( 'Content-Type: text/html; charset=UTF-8' );
-
-      wp_mail( $to, $subject, $body, $headers );
-    }
-  }
-});
+// add_filter( 'wpcf7_before_send_mail', function( $contact_form ) {
+//   global $wpdb;
+//   //error_log(print_r($contact_form, true));
+//
+//   if ( ! isset( $contact_form->posted_data ) && class_exists( 'WPCF7_Submission' ) ) {
+//     $submission = \WPCF7_Submission::get_instance();
+//
+//     if ( $submission ) {
+//       $form_data = $submission->get_posted_data();
+//     }
+//   } else {
+//     return $contact_form;
+//   }
+//
+//   // Set up variables
+//   $url = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+//   $org_id = '00D36000001EFrk';
+//
+//   // General form
+//   if ($contact_form->id == "5") {
+//
+//     $body = array(
+//       'oid' => $org_id,
+//       'recordType' => '0121R0000012VRH',
+//       'retURL' => '/',
+//       'first_name' => $form_data['first-name'],
+//       'last_name' => $form_data['last-name'],
+//       'email' => $form_data['email'],
+//       'company' => $form_data['company'],
+//       'title' => $form_data['title'],
+//       '00N1R00000TXgdb' => $form_data['your-message'],
+//     );
+//
+//     $params = array(
+//       'headers' => array(
+//         'Content-Type' => 'application/x-www-form-urlencoded'
+//       ),
+//       'body' => $body
+//     );
+//
+//     //error_log(print_r($params, true));
+//
+//     $response = wp_remote_post( $url,  $params );
+//
+//     //error_log(print_r($response, true));
+//
+//     if ( is_wp_error( $response ) ) {
+//       $error_message = $response->get_error_message();
+//
+//       $to = 'admin@unitymakes.us';
+//       $subject = 'Boxyard CF7 #5 -> Salesforce POST Failed';
+//       $body = 'Error message: '.$error_message;
+//       $headers = array( 'Content-Type: text/html; charset=UTF-8' );
+//
+//       wp_mail( $to, $subject, $body, $headers );
+//     }
+//   }
+// });
